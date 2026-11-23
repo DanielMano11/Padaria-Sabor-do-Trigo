@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,500..700,0..100&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Fraunces", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #f8f2e8;
+    color: #2a211b;
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: #d95734;
+    color: white;
+  }
+}
+
+@layer components {
+  .nav-link {
+    position: relative;
+    transition: color 200ms ease;
+  }
+
+  .nav-link::after {
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+    left: 0;
+    height: 1px;
+    background: #f2b441;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease;
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border-radius: 9999px;
+    background: #cf4a2c;
+    padding: 1rem 1.5rem;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    box-shadow: 0 16px 35px rgb(60 28 15 / 22%);
+    transition: all 200ms ease;
+  }
+
+  .button-primary:hover {
+    background: #df5737;
+    gap: 1rem;
+    transform: translateY(-2px);
+  }
+
+  .button-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(255 255 255 / 28%);
+    border-radius: 9999px;
+    padding: 1rem 1.5rem;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+    transition: background 200ms ease;
+  }
+
+  .button-ghost:hover {
+    background: rgb(255 255 255 / 10%);
+  }
+
+  .eyebrow {
+    color: #b54328;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    color: #35251d;
+    font-family: "Fraunces", serif;
+    font-size: clamp(3rem, 6vw, 5.1rem);
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+  }
+
+  .product-card {
+    overflow: hidden;
+    border-radius: 10rem 10rem 1.5rem 1.5rem;
+    background: #e8dfd2;
+    box-shadow: 0 24px 55px rgb(65 42 25 / 10%);
+  }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #39251a;
+  }
+
+  .contact-row > span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .contact-row strong {
+    font-size: 0.9rem;
+  }
+
+  .contact-row small {
+    color: rgb(69 39 24 / 65%);
+    font-size: 0.75rem;
+  }
+
+  .contact-icon {
+    display: grid;
+    flex: none;
+    height: 3rem;
+    width: 3rem;
+    place-items: center;
+    border: 1px solid rgb(84 44 22 / 18%);
+    border-radius: 9999px;
+    background: rgb(255 255 255 / 18%);
+  }
+}
+
+.decorative-grain {
+  position: absolute;
+  top: 8%;
+  right: -8rem;
+  width: 22rem;
+  height: 22rem;
+  border: 1px solid rgb(157 77 42 / 10%);
+  border-radius: 50%;
+}
+
+.decorative-grain::before,
+.decorative-grain::after {
+  position: absolute;
+  border: 1px solid rgb(157 77 42 / 9%);
+  border-radius: 50%;
+  content: "";
+  inset: 2.5rem;
+}
+
+.decorative-grain::after {
+  inset: 5rem;
+}
+
+.bread-pattern {
+  background-image:
+    radial-gradient(circle at 20% 30%, transparent 0 25px, #fff 26px 27px, transparent 28px),
+    radial-gradient(circle at 80% 70%, transparent 0 40px, #fff 41px 42px, transparent 43px);
+  background-size: 180px 180px;
+}
+
+@media (max-width: 640px) {
+  .product-card {
+    border-radius: 7rem 7rem 1.5rem 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
