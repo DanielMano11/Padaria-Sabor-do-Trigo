@@ -158,14 +158,14 @@ export default function App() {
             <a className="nav-link" href="#produtos">
               Produtos
             </a>
+            <a className="nav-link" href="#contato">
+              Contato
+            </a>
             <a className="nav-link" href="#sobre">
               Nossa história
             </a>
             <a className="nav-link" href="#avaliacoes">
               Avaliações
-            </a>
-            <a className="nav-link" href="#contato">
-              Contato
             </a>
           </nav>
 
@@ -194,9 +194,9 @@ export default function App() {
             <nav className="flex flex-col gap-1 font-semibold text-[#39291D]">
               {[
                 ["Produtos", "#produtos"],
+                ["Contato", "#contato"],
                 ["Nossa história", "#sobre"],
                 ["Avaliações", "#avaliacoes"],
-                ["Contato", "#contato"],
               ].map(([label, href]) => (
                 <a
                   key={href}
@@ -277,7 +277,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="produtos" className="relative px-6 py-24 lg:px-12 lg:py-32">
+        <section id="produtos" className="relative px-6 pt-24 pb-20 lg:px-12 lg:pt-32 lg:pb-28">
           <div className="decorative-grain" />
           <div className="relative mx-auto max-w-[1320px]">
             <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -334,104 +334,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="sobre" className="bg-[#BD4528] px-6 py-20 text-white lg:px-12 lg:py-28">
-          <div className="mx-auto grid max-w-[1320px] items-center gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-24">
-            <div className="relative">
-              <div className="overflow-hidden rounded-t-[11rem]">
-                <img
-                  src={photos.coffee}
-                  alt="Pães preparados artesanalmente"
-                  className="h-[520px] w-full object-cover sm:h-[650px]"
-                />
-              </div>
-              <div className="absolute -bottom-7 -right-3 grid h-32 w-32 rotate-6 place-items-center rounded-full border border-[#F4D6A2]/50 bg-[#F2B441] text-center text-[#462A18] shadow-xl sm:right-8 sm:h-40 sm:w-40">
-                <div className="-rotate-6">
-                  <strong className="font-display block text-4xl">25+</strong>
-                  <span className="text-[10px] font-bold uppercase tracking-[.17em]">
-                    anos com você
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="lg:pr-12">
-              <p className="text-xs font-bold uppercase tracking-[.22em] text-[#F7D598]">
-                Tradição em cada fornada
-              </p>
-              <h2 className="font-display mt-5 text-5xl font-semibold leading-[1.02] tracking-[-.035em] sm:text-6xl">
-                Aqui, cada receita tem uma história.
-              </h2>
-              <p className="mt-7 text-base leading-8 text-white/75">
-                Há mais de duas décadas, a Sabor do Trigo acorda cedo para fazer parte dos melhores
-                momentos de Limoeiro do Norte. É o pão do café da manhã, o bolo da comemoração e o
-                lanche que reúne a família.
-              </p>
-              <p className="mt-5 text-base leading-8 text-white/75">
-                Nossa receita principal continua a mesma: ingredientes de qualidade, cuidado
-                artesanal e o prazer de servir bem.
-              </p>
-              <div className="mt-10 grid grid-cols-2 gap-6 border-t border-white/20 pt-8">
-                <div>
-                  <strong className="font-display block text-3xl text-[#F6D18F]">Todo dia</strong>
-                  <span className="mt-1 block text-xs text-white/60">produção fresquinha</span>
-                </div>
-                <div>
-                  <strong className="font-display block text-3xl text-[#F6D18F]">+2 mil</strong>
-                  <span className="mt-1 block text-xs text-white/60">seguidores no Instagram</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="avaliacoes" className="bg-[#33251D] px-6 py-24 text-white lg:px-12 lg:py-32">
-          <div className="mx-auto max-w-[1320px]">
-            <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-              <div>
-                <p className="eyebrow text-[#E7B65B]">Quem prova, recomenda</p>
-                <h2 className="font-display mt-3 max-w-2xl text-5xl font-semibold leading-[1.02] tracking-[-.035em] sm:text-6xl">
-                  Tem gosto de casa.
-                  <br />E nota 4,5 no Google.
-                </h2>
-              </div>
-              <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
-                <strong className="font-display text-4xl text-[#F2B441]">4,5</strong>
-                <div>
-                  <div className="flex gap-0.5 text-[#F2B441]">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Icon key={i} name="star" className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
-                  <span className="mt-1 block text-[11px] text-white/50">
-                    130 avaliações no Google
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="mt-14 grid gap-5 md:grid-cols-3">
-              {reviews.map((review, index) => (
-                <blockquote
-                  key={review.text}
-                  className="rounded-[2rem] border border-white/10 bg-white/[.045] p-7 transition hover:-translate-y-1 hover:bg-white/[.07] lg:p-9"
-                >
-                  <span className="font-display text-5xl leading-none text-[#D95332]">“</span>
-                  <p className="font-display mt-3 min-h-28 text-2xl leading-snug text-[#FFF8ED]">
-                    {review.text}
-                  </p>
-                  <footer className="mt-8 flex items-center justify-between border-t border-white/10 pt-5">
-                    <span className="text-xs text-white/50">{review.name}</span>
-                    <span className="flex gap-0.5 text-[#F2B441]">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <Icon key={i} name="star" className="h-3 w-3 fill-current" />
-                      ))}
-                    </span>
-                  </footer>
-                </blockquote>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="contato" className="bg-[#F8F2E8] px-6 py-24 lg:px-12 lg:py-28">
+        <section id="contato" className="bg-[#EFE4D2] px-6 py-20 lg:px-12 lg:py-24">
           <div className="mx-auto grid max-w-[1320px] overflow-hidden rounded-[2.5rem] bg-[#F0B947] shadow-[0_30px_80px_rgba(76,47,24,.14)] lg:grid-cols-[1.1fr_.9fr]">
             <div className="p-8 sm:p-12 lg:p-16">
               <p className="text-xs font-bold uppercase tracking-[.2em] text-[#7A361F]">
@@ -511,9 +414,125 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        <section id="sobre" className="bg-[#BD4528] px-6 py-20 text-white lg:px-12 lg:py-28">
+          <div className="mx-auto grid max-w-[1320px] items-center gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-24">
+            <div className="relative">
+              <div className="overflow-hidden rounded-t-[11rem]">
+                <img
+                  src={photos.coffee}
+                  alt="Pães preparados artesanalmente"
+                  className="h-[520px] w-full object-cover sm:h-[650px]"
+                />
+              </div>
+              <div className="absolute -bottom-7 -right-3 grid h-32 w-32 rotate-6 place-items-center rounded-full border border-[#F4D6A2]/50 bg-[#F2B441] text-center text-[#462A18] shadow-xl sm:right-8 sm:h-40 sm:w-40">
+                <div className="-rotate-6">
+                  <strong className="font-display block text-4xl">25+</strong>
+                  <span className="text-[10px] font-bold uppercase tracking-[.17em]">
+                    anos com você
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="lg:pr-12">
+              <p className="text-xs font-bold uppercase tracking-[.22em] text-[#F7D598]">
+                Tradição em cada fornada
+              </p>
+              <h2 className="font-display mt-5 text-5xl font-semibold leading-[1.02] tracking-[-.035em] sm:text-6xl">
+                Aqui, cada receita tem uma história.
+              </h2>
+              <p className="mt-7 text-base leading-8 text-white/75">
+                Há mais de duas décadas, a Sabor do Trigo acorda cedo para fazer parte dos melhores
+                momentos de Limoeiro do Norte. É o pão do café da manhã, o bolo da comemoração e o
+                lanche que reúne a família.
+              </p>
+              <p className="mt-5 text-base leading-8 text-white/75">
+                Nossa receita principal continua a mesma: ingredientes de qualidade, cuidado
+                artesanal e o prazer de servir bem.
+              </p>
+              <div className="mt-10 grid grid-cols-2 gap-6 border-t border-white/20 pt-8">
+                <div>
+                  <strong className="font-display block text-3xl text-[#F6D18F]">Todo dia</strong>
+                  <span className="mt-1 block text-xs text-white/60">produção fresquinha</span>
+                </div>
+                <div>
+                  <strong className="font-display block text-3xl text-[#F6D18F]">+2 mil</strong>
+                  <span className="mt-1 block text-xs text-white/60">seguidores no Instagram</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="avaliacoes" className="bg-[#33251D] px-6 py-24 text-white lg:px-12 lg:py-32">
+          <div className="mx-auto max-w-[1320px]">
+            <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+              <div>
+                <p className="eyebrow text-[#E7B65B]">Quem prova, recomenda</p>
+                <h2 className="font-display mt-3 max-w-2xl text-5xl font-semibold leading-[1.02] tracking-[-.035em] sm:text-6xl">
+                  Tem gosto de casa.
+                  <br />E nota 4,5 no Google.
+                </h2>
+              </div>
+              <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
+                <strong className="font-display text-4xl text-[#F2B441]">4,5</strong>
+                <div>
+                  <div className="flex gap-0.5 text-[#F2B441]">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Icon key={i} name="star" className="h-4 w-4 fill-current" />
+                    ))}
+                  </div>
+                  <span className="mt-1 block text-[11px] text-white/50">
+                    130 avaliações no Google
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="mt-14 grid gap-5 md:grid-cols-3">
+              {reviews.map((review) => (
+                <blockquote
+                  key={review.text}
+                  className="rounded-[2rem] border border-white/10 bg-white/[.045] p-7 transition hover:-translate-y-1 hover:bg-white/[.07] lg:p-9"
+                >
+                  <span className="font-display text-5xl leading-none text-[#D95332]">“</span>
+                  <p className="font-display mt-3 min-h-28 text-2xl leading-snug text-[#FFF8ED]">
+                    {review.text}
+                  </p>
+                  <footer className="mt-8 flex items-center justify-between border-t border-white/10 pt-5">
+                    <span className="text-xs text-white/50">{review.name}</span>
+                    <span className="flex gap-0.5 text-[#F2B441]">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Icon key={i} name="star" className="h-3 w-3 fill-current" />
+                      ))}
+                    </span>
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
+            <div className="mt-14 flex flex-col items-start justify-between gap-6 rounded-[2rem] border border-white/10 bg-white/[.04] p-7 sm:flex-row sm:items-center lg:px-10 lg:py-8">
+              <div>
+                <p className="font-display text-2xl font-semibold text-[#FFF8ED] sm:text-3xl">
+                  Pronto para garantir o pão quentinho de hoje?
+                </p>
+                <p className="mt-1 text-sm text-white/65">
+                  Faça sua encomenda pelo WhatsApp ou confira nosso endereço e horário de
+                  funcionamento.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="button-primary">
+                  Fazer pedido <Icon name="arrow" className="h-4 w-4" />
+                </a>
+                <a href="#contato" className="button-ghost">
+                  Ver contato
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
-      <footer className="bg-[#2B2019] px-6 py-9 text-white/55 lg:px-12">
+      <footer className="border-t border-white/10 bg-[#2B2019] px-6 py-9 text-white/55 lg:px-12">
         <div className="mx-auto flex max-w-[1320px] flex-col items-center justify-between gap-5 text-center text-xs sm:flex-row sm:text-left">
           <div className="flex items-center gap-2 text-white">
             <Icon name="wheat" className="h-5 w-5 text-[#E9B654]" />
